@@ -1,0 +1,18 @@
+<launch>
+    <!-- Argumentos -->
+    <arg name="gui" default="true" />
+    <arg name="model" default="$(find spot_description)/urdf/standalone_arm.urdf.xacro" />
+    <arg name="rvizconfig" default="$(find spot_description)/rviz/standalone_arm.rviz" />
+
+    <!-- Publica os estados das juntas -->
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+    <!-- Publica a descrição do robô -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+    <!-- Publica os estados das juntas no TF -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Abre o RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
+</launch>

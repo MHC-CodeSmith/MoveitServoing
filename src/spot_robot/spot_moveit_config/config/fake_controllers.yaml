@@ -1,0 +1,17 @@
+controller_list:
+  - name: fake_manipulator_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - arm_sh0
+      - arm_sh1
+      - arm_el0
+      - arm_el1
+      - arm_wr0
+      - arm_wr1
+  - name: fake_endeffector_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - arm_f1x
+initial:  # Define initial robot poses per group
+  - group: endeffector
+    pose: closed

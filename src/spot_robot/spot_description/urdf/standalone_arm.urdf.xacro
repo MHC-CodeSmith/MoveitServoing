@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="standalone_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find spot_description)/urdf/spot_arm_macro.urdf" />
+  <xacro:include filename="$(find spot_description)/urdf/spot_arm_transmissions.xacro" />
+  <xacro:include filename="$(find spot_description)/urdf/spot_arm_gazebo.xacro" />
+
+  <xacro:arg name="tf_prefix" default="" />
+  <xacro:arg name="include_transmissions" default="true" />
+  <xacro:arg name="gripperless" default="false" />
+
+  <xacro:load_arm
+		tf_prefix="$(arg tf_prefix)" 
+		gripperless="$(arg gripperless)" 
+		include_transmissions="$(arg include_transmissions)"/>
+
+  <xacro:spot_arm_gazebo prefix="$(arg tf_prefix)" />
+
+</robot>

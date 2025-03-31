@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="spot_arm_transmissions" params="prefix hw_interface">
+  
+    <transmission name="${prefix}arm_sh0_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_sh0">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_sh0_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${prefix}arm_sh1_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_sh1">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_sh1_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${prefix}arm_el0_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_el0">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_el0_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${prefix}arm_el1_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_el1">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_el1_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${prefix}arm_wr0_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_wr0">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_wr0_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${prefix}arm_wr1_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_wr1">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_wr1_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="${prefix}arm_f1x_tran">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}arm_f1x">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}arm_f1x_motor">
+        <hardwareInterface>${hw_interface}</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+</robot>

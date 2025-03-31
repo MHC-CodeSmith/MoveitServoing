@@ -1,0 +1,14 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - arm_sh0
+    - arm_sh1
+    - arm_el0
+    - arm_el1
+    - arm_wr0
+    - arm_wr1
+    - arm_f1x

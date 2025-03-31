@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="gripperless" default="false" />
+  <arg name="include_transmissions" default="false" />
+  <arg name="tf_prefix" default="" />
+
+  <param name="robot_description"
+         command="$(find xacro)/xacro --inorder '$(find spot_description)/urdf/standalone_arm.urdf.xacro'
+                  gripperless:=$(arg gripperless)
+                  include_transmissions:=$(arg include_transmissions)
+                  tf_prefix:=$(arg tf_prefix)" />
+</launch>

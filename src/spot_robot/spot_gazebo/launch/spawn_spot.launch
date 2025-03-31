@@ -1,0 +1,31 @@
+<launch>
+  <arg name="paused" default="false" />
+  <arg name="gui" default="true" />
+  <arg name="use_sim_time" default="true" />
+
+  <!-- Mundo vazio do Gazebo -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <!-- Carrega URDF com transmissões -->
+  <include file="$(find spot_description)/launch/spot_upload.launch">
+    <arg name="include_transmissions" value="true"/>
+  </include>
+
+  <!-- Spawna o modelo no Gazebo -->
+  <node name="spawn_spot_arm" pkg="gazebo_ros" type="spawn_model"
+        args="-urdf -param robot_description -model spot_arm -z 0.1"
+        respawn="false" output="screen" />
+
+  <include file="$(find spot_gazebo)/launch/spot_controller_utils.launch"/>
+
+  <!-- Carrega parâmetros dos controladores -->
+  <rosparam file="$(find spot_gazebo)/config/spot_arm_controllers.yaml" command="load" />
+
+  <!-- Controladores -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        args="joint_state_controller joint_group_position_controller"
+        output="screen" />
+</launch>

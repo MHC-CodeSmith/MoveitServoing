@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>spot_description</name>
+  <version>0.0.1</version>
+  <description>URDF, Xacro e malhas 3D do braço robótico do Spot.</description>
+
+  <maintainer email="vc@usp.br">Matheus Hipólito</maintainer>
+  <license>MIT</license>
+
+  <!-- Dependências principais -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>xacro</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+  <!-- Para permitir uso de arquivos launch -->
+  <exec_depend>roslaunch</exec_depend>
+
+  <export>
+    <build_type>catkin</build_type>
+  </export>
+</package>

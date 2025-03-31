@@ -1,0 +1,65 @@
+manipulator_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - arm_sh0
+    - arm_sh1
+    - arm_el0
+    - arm_el1
+    - arm_wr0
+    - arm_wr1
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.05
+    arm_sh0: {trajectory: 0.1, goal: 0.1}
+    arm_sh1: {trajectory: 0.1, goal: 0.1}
+    arm_el0: {trajectory: 0.1, goal: 0.1}
+    arm_el1: {trajectory: 0.1, goal: 0.1}
+    arm_wr0: {trajectory: 0.1, goal: 0.1}
+    arm_wr1: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate: 25
+  action_monitor_rate: 10
+
+endeffector_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - arm_f1x
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.05
+    arm_f1x: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate: 25
+  action_monitor_rate: 10
+
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - arm_sh0
+    - arm_sh1
+    - arm_el0
+    - arm_el1
+    - arm_wr0
+    - arm_wr1
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.05
+    arm_sh0: {trajectory: 0.1, goal: 0.1}
+    arm_sh1: {trajectory: 0.1, goal: 0.1}
+    arm_el0: {trajectory: 0.1, goal: 0.1}
+    arm_el1: {trajectory: 0.1, goal: 0.1}
+    arm_wr0: {trajectory: 0.1, goal: 0.1}
+    arm_wr1: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate: 25
+  action_monitor_rate: 10
+
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - arm_sh0
+    - arm_sh1
+    - arm_el0
+    - arm_el1
+    - arm_wr0
+    - arm_wr1

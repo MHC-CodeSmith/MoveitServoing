@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>spot_gazebo</name>
+  <version>0.0.1</version>
+  <description>Integração do Spot com Gazebo, incluindo controladores.</description>
+
+  <maintainer email="vc@usp.br">Matheus Hipólito</maintainer>
+  <license>MIT</license>
+
+  <!-- Dependência do build -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>spot_description</build_depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>spot_description</exec_depend>
+
+  <export>
+    <build_type>catkin</build_type>
+  </export>
+</package>

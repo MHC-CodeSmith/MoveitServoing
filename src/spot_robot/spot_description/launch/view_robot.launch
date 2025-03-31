@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Sobe o modelo do robô -->
+  <include file="$(find spot_description)/launch/spot_upload.launch">
+    <arg name="include_transmissions" value="false"/>
+  </include>
+
+  <!-- GUI para manipular juntas -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="true"/>
+  </node>
+
+  <!-- Publicador dos frames -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Visualização no RViz -->
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find spot_description)/rviz/view_robot.rviz"
+        required="true" />
+
+</launch>
