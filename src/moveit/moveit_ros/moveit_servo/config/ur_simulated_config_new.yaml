@@ -71,4 +71,4 @@ min_allowable_collision_distance: 0.01 # Stop if a collision is closer than this
 ## Added parameters
 # TF which the arm follows
 # target_frame: "pot_fields_target"
-target_frame: "ee_target"
+target_frame: "wrist"

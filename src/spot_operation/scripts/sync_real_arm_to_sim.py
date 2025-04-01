@@ -13,7 +13,7 @@ ARM_JOINTS = [
     "arm0.el1",
     "arm0.wr0",
     "arm0.wr1",
-    "arm0.f1x",
+    # "arm0.f1x",
 ]
 
 # Converte nomes da SDK do Spot para os nomes usados no MoveIt (baseado no SRDF/URDF)
